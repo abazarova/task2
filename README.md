@@ -29,9 +29,7 @@ Visual Studio 2017
 
 ## How to compile
 
-```sh
-~$ gcc slist.c slist_test.c -o slist_test
-```
+Build a project in the Visual Studio
 
 ## Licenses
 
