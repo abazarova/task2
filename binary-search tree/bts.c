@@ -107,6 +107,55 @@ void dfs(PTREE_NODE tree)
 	}
 }
 
+/*
+ * Helper
+ * Arguments: tree - pointer to the tree
+ * Returns depth of the tree
+ */
+
+int tree_depth(PTREE_NODE tree) {
+	int n, m;
+	if (tree == NULL) {
+		return 0;
+	}
+	else {
+		n = tree_depth(tree->left);
+		m = tree_depth(tree->right);
+		if (m > n) {
+			return m + 1;
+		}
+		else {
+			return n + 1;
+		}
+	}
+}
+
+/*
+ * Helper
+ * Prints all nodes of the given level
+ * Arguments: tree - pointer to the tree, level
+ * Returns: none
+ */
+
+void tree_lvl(PTREE_NODE tree, int x) {
+	if (x == 0) {
+		printf("%d ", tree->key);
+	}
+	if (tree->left != NULL) {
+		tree_lvl(tree->left, x - 1);
+	}
+	if (tree->right != NULL) {
+		tree_lvl(tree->right, x - 1);
+	}
+}
+
+void wfs(PTREE_NODE tree) {
+	int depth = tree_depth(tree);
+	int level;
+	for (level = 0; level < depth; level++)
+		tree_lvl(tree, level);
+}
+
 int main() //some tests
 {
 	PTREE_NODE tree = create_tree();
