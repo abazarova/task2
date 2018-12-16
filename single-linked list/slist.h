@@ -46,14 +46,14 @@ pslist_entry slist_pop(pslist list);
 /*
 *	Adds new element to the head of the list
 *	Params: list - pointer to the list, value - the element we want to add
-*	Returns none
+*	Returns 0 if all right, -1 if smth wrong
 */
 int slist_insert(pslist list, int value);
 
 /*
 *	Remove from the list elements with definite value
 *	Params: list - pointer to the list, value - value we want to remove
-*	Returns amount of the deleted elements
+*	Returns 0 if all right, -1 if smth wrong
 */
 int slist_remove(pslist list, int value);
 
