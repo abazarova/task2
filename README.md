@@ -20,7 +20,7 @@ Visual Studio 2017
 |                | 1.4 Brackets                            |
 |                | 1.8 Binary tree                         |
 |                | 1.10 Notebook test                      |
-|                | 1.10 Check tree                         |
+|                | 1.13 Check tree                         |
 | A. Bazarova    | 1.2 Single-linked list testing          |
 |                | 1.3 Double-linked list                  |
 |                | 1.9 Traverse tree                       |
