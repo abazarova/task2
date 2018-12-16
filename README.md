@@ -21,7 +21,6 @@ Visual Studio 2017
 |                | 1.8 Binary tree                         |
 |                | 1.10 Notebook test                      |
 |                | 1.10 Check tree                         |
-| -------------- |:---------------------------------------:|
 | A. Bazarova    | 1.2 Single-linked list testing          |
 |                | 1.3 Double-linked list                  |
 |                | 1.9 Traverse tree                       |
@@ -37,21 +36,21 @@ Visual Studio 2017
 *slist/slist.h* - single linked list header  
 *slist/slist_test.c* - single linked list usage
 
-**brackets** - directory for brackets
-*brackets/brackets.h* - brackets (stack) header
-*brackets/brackets.с* - brackets implementation
+**brackets** - directory for brackets  
+*brackets/brackets.h* - brackets (stack) header  
+*brackets/brackets.с* - brackets implementation  
 
-**binary-search tree** -  directory for binary-search tree
-*bts.h* - binary-search tree implementation
-*bts.c* - binary-search tree header
+**binary-search tree** -  directory for binary-search tree  
+*bts.h* - binary-search tree implementation  
+*bts.c* - binary-search tree header  
 
-*avl_tree.h* - AVL tree header
+*avl_tree.h* - AVL tree header  
 *avl_tree.c* - AVL tree implementation
 
-*doubly_linked_list.h* - doubly_linked_list header
+*doubly_linked_list.h* - doubly_linked_list header  
 *doubly_linked_list.c* - doubly_linked_list implementation
 
-*hash_map.h* - hash map header
+*hash_map.h* - hash map header  
 *hash_map.h* - hash map implementation
 
 ## How to compile
