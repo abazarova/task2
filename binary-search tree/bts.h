@@ -31,7 +31,7 @@ PTREE_NODE create_tree(void);
  * Returns pointer to the tree (created or existing)
  */
 
-PTREE_NODE add_node(PTREE_NODE tree, int key); // prototype
+PTREE_NODE add_node(PTREE_NODE tree, int key);
 
 /*
  * Deletes existing element with the given key from the tree
