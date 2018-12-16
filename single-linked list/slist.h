@@ -26,7 +26,6 @@ struct slist
  *	Parametres: none
  *	Returns pointer to the list
  */
-
 pslist slist_new(void);
 
 /*
@@ -34,8 +33,6 @@ pslist slist_new(void);
 *	Params: list - pointer to the list we want to delete
 *	Returns none
 */
-
-
 void slist_delete(pslist list);
 
 /*
@@ -44,7 +41,6 @@ void slist_delete(pslist list);
  *	Returns deleted element
  *
  */
-
 pslist_entry slist_pop(pslist list);
 
 /*
@@ -52,7 +48,6 @@ pslist_entry slist_pop(pslist list);
 *	Params: list - pointer to the list, value - the element we want to add
 *	Returns none
 */
-
 int slist_insert(pslist list, int value);
 
 /*
@@ -60,7 +55,6 @@ int slist_insert(pslist list, int value);
 *	Params: list - pointer to the list, value - value we want to remove
 *	Returns amount of the deleted elements
 */
-
 int slist_remove(pslist list, int value);
 
 /*
@@ -68,5 +62,4 @@ int slist_remove(pslist list, int value);
 *	Params: list - pointer to the list
 *	Returns none
 */
-
 void slist_print(pslist list);
