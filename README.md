@@ -29,7 +29,7 @@ Visual Studio 2017
 
 ## How to compile
 
-Build a project in the Visual Studio
+Build up a project in the Visual Studio
 
 ## Licenses
 
