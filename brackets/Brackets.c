@@ -22,9 +22,11 @@ void push(pbracket *top, int new_value)
 /* pop a bracket from the stack */
 char pop(pbracket *top)
 {
-	char res;
+	char res; //variable to return
+	
 	pbracket new_top; //add to free memory
 	new_top = *top;
+	
 	res = new_top->value;
 	*top = new_top->next;
 	free(new_top);
@@ -37,12 +39,12 @@ char pop(pbracket *top)
 */
 int is_correct(char character1, char character2)
 {
-	if (character1 == '(' && character2 == ')')
+	if (character1 == '(' && character2 == ')') //one type of pair
 		return 1;
-	else if (character1 == '{' && character2 == '}')
+	else if (character1 == '{' && character2 == '}') //another
 		return 1;
 	else
-		return 0;
+		return 0; //incorrect
 }
 
 /* Check is it a correct expression
