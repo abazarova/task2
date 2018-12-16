@@ -40,9 +40,10 @@ Visual Studio 2017
 *brackets/brackets.h* - brackets (stack) header  
 *brackets/brackets.с* - brackets implementation  
 
-**binary-search tree** -  directory for binary-search tree  
+**binary-search tree** -  directory for binary-search tree and check tree  
 *bts.h* - binary-search tree implementation  
 *bts.c* - binary-search tree header  
+*check_tree.c* - check is tree AVL or not
 
 *avl_tree.h* - AVL tree header  
 *avl_tree.c* - AVL tree implementation
