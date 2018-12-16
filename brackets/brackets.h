@@ -26,4 +26,4 @@ void push(pbracket top, int new_value);
  * Params: top - pointer to the top bracket
  * Returns the popped bracket
  */
-int pop(pbracket top);
+char pop(pbracket top);
