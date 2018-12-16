@@ -51,7 +51,7 @@ Visual Studio 2017
 *doubly_linked_list.c* - doubly_linked_list implementation
 
 *hash_map.h* - hash map header  
-*hash_map.h* - hash map implementation
+*hash_map.с* - hash map implementation
 
 ## How to compile
 
