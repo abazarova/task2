@@ -10,8 +10,8 @@
 
 pslist slist_new(void)
 {
-	pslist list = malloc(sizeof(struct slist));
-	if (NULL == list)
+	pslist list = malloc(sizeof(struct slist)); //allocate memory
+	if (NULL == list) //check
 		return NULL;
 	list->size = 0;
 	list->head = NULL;
@@ -22,10 +22,10 @@ pslist slist_new(void)
 pslist_entry slist_pop(pslist list)
 {
 	pslist_entry p = list->head;
-	if (NULL == p)
+	if (NULL == p) //check
 		return NULL;
 	list->head = p->next;
-	list->size--;
+	list->size--; //decrease size
 	return p;
 }
 
@@ -45,12 +45,12 @@ void slist_delete(pslist list)
    Put at the end */
 int slist_insert(pslist list, int value)
 {
-	struct slist_entry *pnew = malloc(sizeof(struct slist_entry));
-	if (pnew == NULL)
+	struct slist_entry *pnew = malloc(sizeof(struct slist_entry)); //allocate memory
+	if (pnew == NULL) //check errors
 		return -1;
 	pnew->next = list->head;
 	pnew->value = value;
-	printf("New element: %d\n", pnew->value);
+	printf("New element: %d\n", pnew->value); //check by printing
 	list->head = pnew;
 	list->size++;
 	return 0;
@@ -59,15 +59,15 @@ int slist_insert(pslist list, int value)
 /* Go through the list, remove if value is equal */
 int slist_remove(pslist list, int value)
 {
-	pslist_entry tail = list->head;
-	while  ((tail->value == value) && (NULL != tail))
+	pslist_entry tail = list->head; // tail - current element
+	while  ((tail->value == value) && (NULL != tail)) //delete heads
 		tail = slist_pop(list)->next;
 
-	while (NULL != tail->next)
+	while (NULL != tail->next) //check next
 	{
 		if (tail->next->value == value)
 		{
-			pslist_entry p = tail->next; //add to free memory clear
+			pslist_entry p = tail->next; //additional variable to free memory clear
 			tail->next = tail->next->next;
 			free(p);
 		}
