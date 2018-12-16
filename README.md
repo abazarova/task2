@@ -53,6 +53,10 @@ Visual Studio 2017
 *hash_map.h* - hash map header  
 *hash_map.с* - hash map implementation
 
+*notebook.h* - notebook header  
+*notebook_slist.c* - notebook implementation by slist  
+*notebook.c* - notebook implementation
+
 ## How to compile
 
 Build up a project (which contain all files for this task)  in the Visual Studio
