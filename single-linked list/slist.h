@@ -1,6 +1,6 @@
 /*
  *	This file is single_linked_list.h
- *	Doubly linked list
+ *	Single linked list
  *
  */
 
@@ -17,7 +17,7 @@ struct slist_entry
 
 struct slist
 {
-	int size;
+	int size; //sugar
 	pslist_entry head;
 };
 
@@ -32,25 +32,41 @@ pslist slist_new(void);
 /*
 *	Deletes memory for each element
 *	Params: list - pointer to the list we want to delete
-*	Returns 0 if everything is OK and the list was deleted;
+*	Returns none
 */
 
 
-int slist_delete(pslist list);
+void slist_delete(pslist list);
 
 /*
- *	Deletes the last element of the list
- *	Parametres: list - pointer to the list, x - saves the deleted element
+ *	Deletes the head of the list
+ *	Parametres: list - pointer to the list
  *	Returns deleted element
  *
  */
 
-pslist_entry slist_pop(pslist list, pslist_entry *x);
+pslist_entry slist_pop(pslist list);
 
 /*
-*	Adds new element to the end of the list
+*	Adds new element to the head of the list
 *	Params: list - pointer to the list, value - the element we want to add
-*	Returns 0 if no errrors
+*	Returns none
 */
 
-int slist_push(pslist list, int value);
+int slist_insert(pslist list, int value);
+
+/*
+*	Remove from the list elements with definite value
+*	Params: list - pointer to the list, value - value we want to remove
+*	Returns amount of the deleted elements
+*/
+
+int slist_remove(pslist list, int value);
+
+/*
+*	Print list to screen
+*	Params: list - pointer to the list
+*	Returns none
+*/
+
+void slist_print(pslist list);
