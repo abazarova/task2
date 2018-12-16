@@ -53,7 +53,7 @@ int slist_insert(pslist list, int value);
 /*
 *	Remove from the list elements with definite value
 *	Params: list - pointer to the list, value - value we want to remove
-*	Returns 0 if all right, -1 if smth wrong
+*	Returns amount of the removed elements;
 */
 int slist_remove(pslist list, int value);
 
