@@ -59,10 +59,13 @@ int slist_insert(pslist list, int value)
 /* Go through the list, remove if value is equal */
 int slist_remove(pslist list, int value)
 {
+	int start_size = list->size;
 	pslist_entry tail = list->head; // tail - current element
 	while  ((tail->value == value) && (NULL != tail)) //delete heads
+	{
+		list->size--;
 		tail = slist_pop(list)->next;
-
+	}
 	while (NULL != tail->next) //check next
 	{
 		if (tail->next->value == value)
@@ -70,6 +73,7 @@ int slist_remove(pslist list, int value)
 			pslist_entry p = tail->next; //additional variable to free memory clear
 			tail->next = tail->next->next;
 			free(p);
+			list->size--;
 		}
 		else
 		{
@@ -77,7 +81,7 @@ int slist_remove(pslist list, int value)
 		}
 	}
 		
-	return 0;
+	return start_size - list->size; //amount of the removed elements
 }
 
 /* For each element print in value */
