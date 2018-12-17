@@ -108,6 +108,31 @@ int dlist_shift(pdlist list, pdlist_entry *x)
 	return x;
 }
 
+pdlist dlist_reverse(pdlist list)
+{
+	int i;
+	pdlist_entry x, a;
+	a = malloc(sizeof(pdlist_entry));
+	x = malloc(sizeof(pdlist_entry));
+	x = list->head;
+
+	for (i = 0; i < list->size - 1; i++)
+	{
+		a = x->next;
+		x->next = x->prev;
+		x->prev = a;
+		x = a;
+	}
+	a = x->next;
+	x->next = x->prev;
+	x->prev = a;
+
+	list->head = x;
+
+	return list;
+}
+
+
 
  int main() // I tested my list using main function
  {
