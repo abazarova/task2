@@ -1,6 +1,6 @@
 /*
 *	This file is avl_tree.h
-*	AVL tree implementation
+*	AVL tree header
 *
 */
 
