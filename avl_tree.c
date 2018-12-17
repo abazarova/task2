@@ -28,7 +28,12 @@ pnode add_node(pnode x, char s[50], char a[50])
 	}
 	else if (strcmp(s, x->surname) > 0)
 		x->right = add_node(x->right, s, a);
-	else x->left = add_node(x->left, s, a);
+	else if (strcmp(s, x->surname) == 0)
+	{
+		printf("%s phone number was changed. Old value: %s \n", x->surname, x->a);
+		memcpy(x->a, a, strlen(a) + 1);
+	}
+		else x->left = add_node(x->left, s, a);
 
 	return balance(x);
 
