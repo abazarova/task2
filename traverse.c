@@ -1,3 +1,11 @@
+/*
+ *	This is traverse.c
+ *	This function prints out binary search tree made by M. Seliugin
+ *
+ */
+
+
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "bts.h"
 #include <stdio.h>
