@@ -73,3 +73,11 @@ int dlist_push(pdlist list, int value);
 
 
 int dlist_shift(pdlist list, pdlist_entry *x);
+
+/*
+*	Reverses doubly linked list
+*	Params: list - pointer to the list
+*	Returns pointer to the updated list
+*/
+
+pdlist dlist_reverse(pdlist list);
