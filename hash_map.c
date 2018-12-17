@@ -37,35 +37,46 @@ int hash_func(char s[50])
 pmap add(pmap map, char s[50], char a[50])
 {
 	int i;
-
+	pdlist_entry x;
+	
 	i = hash_func(s);
-	if (NULL == map->p[i]->head)
+	x = find(map, s);
+	
+	if (NULL == x)
 	{
-		pnode p = malloc(sizeof(pnode));
-		
-		p->hash_index = i;
-		p->head = malloc(sizeof(pdlist_entry));
-		p->head->surname = malloc((strlen(s) + 1) * sizeof(char));
-		p->head->number = malloc((strlen(a) + 1) * sizeof(char));
-		memcpy(p->head->surname, s, strlen(s) + 1);
-		memcpy(p->head->number, a, strlen(a) + 1);
-		p->head->next = NULL;
-		p->head->prev = NULL;
-		map->p[i] = p;
+		if (NULL == map->p[i]->head)
+		{
+			pnode p = malloc(sizeof(pnode));
+
+			p->hash_index = i;
+			p->head = malloc(sizeof(pdlist_entry));
+			p->head->surname = malloc((strlen(s) + 1) * sizeof(char));
+			p->head->number = malloc((strlen(a) + 1) * sizeof(char));
+			memcpy(p->head->surname, s, strlen(s) + 1);
+			memcpy(p->head->number, a, strlen(a) + 1);
+			p->head->next = NULL;
+			p->head->prev = NULL;
+			map->p[i] = p;
+		}
+		else
+		{
+			pdlist_entry t = malloc(sizeof(pdlist_entry));
+			t->surname = malloc((strlen(s) + 1) * sizeof(char));
+			t->number = malloc((strlen(a) + 1) * sizeof(char));
+			memcpy(t->surname, s, strlen(s) + 1);
+			memcpy(t->number, a, strlen(a) + 1);
+			map->p[i]->head->prev = t;
+			t->next = map->p[i]->head;
+			t->prev = NULL;
+			map->p[i]->head = t;
+		}
+		map->element_count++;
 	}
 	else
 	{
-		pdlist_entry t = malloc(sizeof(pdlist_entry));
-		t->surname = malloc((strlen(s) + 1) * sizeof(char));
-		t->number = malloc((strlen(a) + 1) * sizeof(char));
-		memcpy(t->surname, s, strlen(s) + 1);
-		memcpy(t->number, a, strlen(a) + 1);
-		map->p[i]->head->prev = t;
-		t->next = map->p[i]->head;
-		t->prev = NULL;
-		map->p[i]->head = t;
+		printf("%s phone number was changed. Old value: %s \n", x->surname, x->number);
+		memcpy(x->number, a, strlen(a) + 1);
 	}
-	map->element_count++;
 
 	return map;
 }
